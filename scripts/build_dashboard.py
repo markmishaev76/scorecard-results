@@ -15,7 +15,7 @@ Engineering harness grades for [markmishaev76](https://github.com/markmishaev76)
 
 ## Dashboard
 
-| Repository | Grade | Score | Passed | Report |
+| Repository | Badge | Score | Passed | Report |
 |------------|-------|-------|--------|--------|
 """
 
@@ -50,16 +50,18 @@ def build_dashboard(reports_dir: Path, output: Path) -> None:
 
     timestamp = rows[0].get("timestamp", "unknown")[:19].replace("T", " ") + " UTC"
 
+    badge_base = "https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarkmishaev76%2Fscorecard-results%2Fmain%2Fbadges%2F"
+
     lines = HEADER.format(timestamp=timestamp)
     for row in rows:
         name = row["repo_name"]
-        grade = row["grade"]
         score = row["overall_score"]
         passed = row["passed_checks"]
         total = row["total_checks"]
-        emoji = GRADE_EMOJI.get(grade, "")
+        badge_url = f"{badge_base}{name}.json"
+        badge_img = f"![score]({badge_url})"
         report_link = f"[details](reports/{name}.md)"
-        lines += f"| [{name}](https://github.com/markmishaev76/{name}) | {emoji} **{grade}** | {score:.1f}/100 | {passed}/{total} | {report_link} |\n"
+        lines += f"| [{name}](https://github.com/markmishaev76/{name}) | {badge_img} | {score:.1f}/100 | {passed}/{total} | {report_link} |\n"
 
     lines += FOOTER
     output.write_text(lines)

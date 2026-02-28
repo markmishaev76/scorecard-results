@@ -30,19 +30,21 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/markmishaev76/${{ matrix.repo }}.git /tmp/${{ matrix.repo }}
 
-      - name: Run AI Harness Scorecard
-        uses: markmishaev76/ai-harness-scorecard@main
+      - name: Run AI Harness Scorecard (markdown)
+        uses: markmishaev76/ai-harness-scorecard@v1
         with:
           path: /tmp/${{ matrix.repo }}
           format: markdown
           output-file: reports/${{ matrix.repo }}.md
+          badge-file: badges/${{ matrix.repo }}.json
 
-      - name: Generate JSON report
-        uses: markmishaev76/ai-harness-scorecard@main
+      - name: Run AI Harness Scorecard (json)
+        uses: markmishaev76/ai-harness-scorecard@v1
         with:
           path: /tmp/${{ matrix.repo }}
           format: json
           output-file: reports/${{ matrix.repo }}.json
+          badge-file: ''
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
@@ -51,6 +53,7 @@ jobs:
           path: |
             reports/${{ matrix.repo }}.md
             reports/${{ matrix.repo }}.json
+            badges/${{ matrix.repo }}.json
 
   dashboard:
     runs-on: ubuntu-latest
@@ -63,8 +66,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: report-*
-          path: reports/
+          path: artifacts/
           merge-multiple: true
+
+      - name: Organize artifacts
+        run: |
+          mkdir -p reports badges
+          cp artifacts/reports/*.md artifacts/reports/*.json reports/ 2>/dev/null || true
+          cp artifacts/badges/*.json badges/ 2>/dev/null || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -78,7 +87,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md reports/
+          git add README.md reports/ badges/
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: update scorecard results"
+          git commit -m "chore: update scorecard results and badges"
           git push
