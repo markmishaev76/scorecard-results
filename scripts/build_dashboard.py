@@ -58,7 +58,7 @@ def build_dashboard(reports_dir: Path, output: Path) -> None:
         score = row["overall_score"]
         passed = row["passed_checks"]
         total = row["total_checks"]
-        badge_url = f"{badge_base}{name}.json"
+        badge_url = f"{badge_base}{name}.json&cacheSeconds=300"
         badge_img = f"![score]({badge_url})"
         report_link = f"[details](reports/{name}.md)"
         lines += f"| [{name}](https://github.com/markmishaev76/{name}) | {badge_img} | {score:.1f}/100 | {passed}/{total} | {report_link} |\n"
