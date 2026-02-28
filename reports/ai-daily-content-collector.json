@@ -1,15 +1,15 @@
 {
   "repo_path": "/tmp/ai-daily-content-collector",
   "repo_name": "ai-daily-content-collector",
-  "timestamp": "2026-02-28T10:19:57.266754+00:00",
+  "timestamp": "2026-02-28T11:50:37.510470+00:00",
   "languages": [
     "python"
   ],
-  "overall_score": 1.5,
+  "overall_score": 7.9,
   "grade": "F",
   "grade_description": "No meaningful harness. AI output is essentially unaudited.",
   "total_checks": 31,
-  "passed_checks": 1,
+  "passed_checks": 3,
   "categories": [
     {
       "category_id": "documentation",
@@ -75,18 +75,18 @@
       "category_id": "constraints",
       "name": "Mechanical Constraints",
       "weight": 0.25,
-      "score": 0.0,
+      "score": 3.0,
       "max_score": 22.0,
-      "percentage": 0.0,
+      "percentage": 13.6,
       "checks": [
         {
           "check_id": "ci_pipeline_exists",
           "name": "CI Pipeline",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No CI configuration found",
-          "remediation": "Add .gitlab-ci.yml or .github/workflows/ to run automated checks on every change.",
+          "evidence": "CI detected: github",
+          "remediation": "",
           "source": "DORA 2025 Report"
         },
         {
@@ -245,9 +245,9 @@
       "category_id": "review",
       "name": "Review & Drift Prevention",
       "weight": 0.15,
-      "score": 0.0,
+      "score": 3.0,
       "max_score": 15.0,
-      "percentage": 0.0,
+      "percentage": 20.0,
       "checks": [
         {
           "check_id": "code_review_required",
@@ -262,11 +262,11 @@
         {
           "check_id": "scheduled_ci",
           "name": "Scheduled CI Jobs",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No scheduled CI jobs found",
-          "remediation": "Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.",
+          "evidence": "Scheduled CI pipeline found",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - garbage collection agents"
         },
         {

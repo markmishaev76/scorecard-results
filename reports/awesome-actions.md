@@ -1,11 +1,11 @@
 # AI Harness Scorecard: awesome-actions
 
-**Grade: F** (3.4/100) | No meaningful harness. AI output is essentially unaudited.
+**Grade: F** (6.4/100) | No meaningful harness. AI output is essentially unaudited.
 
 - **Repository**: `/tmp/awesome-actions`
 - **Languages**: none detected
-- **Assessed**: 2026-02-28 10:19 UTC
-- **Checks**: 1/31 passed
+- **Assessed**: 2026-02-28 11:50 UTC
+- **Checks**: 2/31 passed
 
 ## Summary
 
@@ -14,7 +14,7 @@
 | Architectural Documentation | 20% | 0% [----------] | 0/5 |
 | Mechanical Constraints | 25% | 14% [#---------] | 1/7 |
 | Testing & Stability | 25% | 0% [----------] | 0/8 |
-| Review & Drift Prevention | 15% | 0% [----------] | 0/6 |
+| Review & Drift Prevention | 15% | 20% [##--------] | 1/6 |
 | AI-Specific Safeguards | 15% | 0% [----------] | 0/5 |
 
 ## Architectural Documentation (0%)
@@ -66,7 +66,7 @@ _DORA 2025 - AI-accessible documentation_
 
 _DORA 2025 Report_
 
-**Evidence**: CI detected: github
+**Evidence**: CI detected: github, github
 
 ### [FAIL] Linter Enforcement (0/4)
 
@@ -184,7 +184,7 @@ _DORA 2025 - stability metrics_
 **Remediation**: Add test execution to CI as a blocking job.
 
 
-## Review & Drift Prevention (0%)
+## Review & Drift Prevention (20%)
 
 ### [FAIL] Code Review Required (0/4)
 
@@ -194,13 +194,11 @@ _OpenAI Harness Engineering - author/reviewer separation_
 
 **Remediation**: Enable required reviews in branch protection settings and add CODEOWNERS.
 
-### [FAIL] Scheduled CI Jobs (0/3)
+### [PASS] Scheduled CI Jobs (3/3)
 
 _OpenAI Harness Engineering - garbage collection agents_
 
-**Evidence**: No scheduled CI jobs found
-
-**Remediation**: Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.
+**Evidence**: Scheduled CI pipeline found
 
 ### [FAIL] Stale Documentation Detection (0/2)
 

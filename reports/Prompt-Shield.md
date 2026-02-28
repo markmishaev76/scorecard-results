@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/Prompt-Shield`
 - **Languages**: python
-- **Assessed**: 2026-02-28 10:19 UTC
+- **Assessed**: 2026-02-28 11:50 UTC
 - **Checks**: 13/31 passed
 
 ## Summary
@@ -64,7 +64,7 @@ _DORA 2025 - AI-accessible documentation_
 
 _DORA 2025 Report_
 
-**Evidence**: CI detected: github, github, github, github, github, github, github
+**Evidence**: CI detected: github, github, github, github, github, github, github, github, github
 
 ### [FAIL] Linter Enforcement (0/4)
 

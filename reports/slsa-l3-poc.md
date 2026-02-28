@@ -1,11 +1,11 @@
 # AI Harness Scorecard: slsa-l3-poc
 
-**Grade: F** (10.4/100) | No meaningful harness. AI output is essentially unaudited.
+**Grade: F** (13.4/100) | No meaningful harness. AI output is essentially unaudited.
 
 - **Repository**: `/tmp/slsa-l3-poc`
 - **Languages**: none detected
-- **Assessed**: 2026-02-28 10:19 UTC
-- **Checks**: 4/31 passed
+- **Assessed**: 2026-02-28 11:50 UTC
+- **Checks**: 5/31 passed
 
 ## Summary
 
@@ -14,7 +14,7 @@
 | Architectural Documentation | 20% | 0% [----------] | 0/5 |
 | Mechanical Constraints | 25% | 14% [#---------] | 1/7 |
 | Testing & Stability | 25% | 20% [##--------] | 2/8 |
-| Review & Drift Prevention | 15% | 13% [#---------] | 1/6 |
+| Review & Drift Prevention | 15% | 33% [###-------] | 2/6 |
 | AI-Specific Safeguards | 15% | 0% [----------] | 0/5 |
 
 ## Architectural Documentation (0%)
@@ -66,7 +66,7 @@ _DORA 2025 - AI-accessible documentation_
 
 _DORA 2025 Report_
 
-**Evidence**: CI detected: github, github, github
+**Evidence**: CI detected: github, github, github, github
 
 ### [FAIL] Linter Enforcement (0/4)
 
@@ -180,7 +180,7 @@ _DORA 2025 - stability metrics_
 **Evidence**: All test jobs are blocking: build-and-attest, create-deployment-record, create-storage-record
 
 
-## Review & Drift Prevention (13%)
+## Review & Drift Prevention (33%)
 
 ### [PASS] Code Review Required (2/4)
 
@@ -190,13 +190,11 @@ _OpenAI Harness Engineering - author/reviewer separation_
 
 **Remediation**: Enforce code review via branch protection rules (requires API access to verify).
 
-### [FAIL] Scheduled CI Jobs (0/3)
+### [PASS] Scheduled CI Jobs (3/3)
 
 _OpenAI Harness Engineering - garbage collection agents_
 
-**Evidence**: No scheduled CI jobs found
-
-**Remediation**: Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.
+**Evidence**: Scheduled CI pipeline found
 
 ### [FAIL] Stale Documentation Detection (0/2)
 

@@ -1,23 +1,23 @@
 {
   "repo_path": "/tmp/ai-harness-scorecard",
   "repo_name": "ai-harness-scorecard",
-  "timestamp": "2026-02-28T10:19:57.406148+00:00",
+  "timestamp": "2026-02-28T11:50:39.221522+00:00",
   "languages": [
     "python"
   ],
-  "overall_score": 30.9,
-  "grade": "F",
-  "grade_description": "No meaningful harness. AI output is essentially unaudited.",
+  "overall_score": 92.0,
+  "grade": "A",
+  "grade_description": "Strong harness. AI-generated code has robust mechanical safeguards.",
   "total_checks": 31,
-  "passed_checks": 9,
+  "passed_checks": 30,
   "categories": [
     {
       "category_id": "documentation",
       "name": "Architectural Documentation",
       "weight": 0.2,
-      "score": 9.0,
+      "score": 20.0,
       "max_score": 20.0,
-      "percentage": 45.0,
+      "percentage": 100.0,
       "checks": [
         {
           "check_id": "architecture_doc",
@@ -32,21 +32,21 @@
         {
           "check_id": "agent_instructions",
           "name": "Agent Instructions",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 5.0,
           "max_points": 5.0,
-          "evidence": "No AI agent instruction files found",
-          "remediation": "Create CLAUDE.md or AGENTS.md with project context, code style, and constraints so AI agents produce consistent output.",
+          "evidence": "Found: AGENTS.md",
+          "remediation": "",
           "source": "OpenAI Harness Engineering (2026)"
         },
         {
           "check_id": "adr_presence",
           "name": "Architecture Decision Records",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No Architecture Decision Records found",
-          "remediation": "Create docs/adr/ directory with numbered markdown decision records. Use adr-tools or a simple template.",
+          "evidence": "Found ADR directory: docs/adr",
+          "remediation": "",
           "source": "DORA 2025 Report - AI-accessible documentation"
         },
         {
@@ -62,11 +62,11 @@
         {
           "check_id": "api_contracts",
           "name": "API Documentation",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No API documentation generation or spec files found",
-          "remediation": "Add doc generation to CI (cargo doc, typedoc, sphinx) or maintain OpenAPI/Swagger specs.",
+          "evidence": "Doc generation found in CI",
+          "remediation": "",
           "source": "DORA 2025 - AI-accessible documentation"
         }
       ]
@@ -75,9 +75,9 @@
       "category_id": "constraints",
       "name": "Mechanical Constraints",
       "weight": 0.25,
-      "score": 10.0,
+      "score": 22.0,
       "max_score": 22.0,
-      "percentage": 45.5,
+      "percentage": 100.0,
       "checks": [
         {
           "check_id": "ci_pipeline_exists",
@@ -85,7 +85,7 @@
           "passed": true,
           "score": 3.0,
           "max_points": 3.0,
-          "evidence": "CI detected: github",
+          "evidence": "CI detected: github, github, github",
           "remediation": "",
           "source": "DORA 2025 Report"
         },
@@ -112,41 +112,41 @@
         {
           "check_id": "type_safety",
           "name": "Type Safety",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No type safety enforcement found",
-          "remediation": "Use a statically typed language, enable TypeScript strict mode, or add mypy/pyright to CI for Python.",
+          "evidence": "Python type checker found in CI",
+          "remediation": "",
           "source": "SlopCodeBench - preventing subtle type errors"
         },
         {
           "check_id": "dependency_auditing",
           "name": "Dependency Auditing",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 4.0,
           "max_points": 4.0,
-          "evidence": "No dependency auditing found",
-          "remediation": "Add cargo deny/audit, npm audit, pip-audit, or Snyk to CI as a blocking check.",
+          "evidence": "Blocking dependency audit in CI: pip-audit",
+          "remediation": "",
           "source": "Blog: security infrastructure reliability"
         },
         {
           "check_id": "conventional_commits",
           "name": "Conventional Commits",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No conventional commit enforcement found",
-          "remediation": "Add commitlint or equivalent to CI to enforce consistent commit message format.",
+          "evidence": "Commit lint config found: .commitlintrc.yml",
+          "remediation": "",
           "source": "DORA 2025 - working in small batches"
         },
         {
           "check_id": "unsafe_code_policy",
           "name": "Unsafe Code Policy",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No explicit policy against unsafe code patterns",
-          "remediation": "Add unsafe_code = forbid (Rust), security linting (semgrep/bandit), or ESLint rules against dangerous patterns.",
+          "evidence": "Security linter found in CI",
+          "remediation": "",
           "source": "Blog: 80% problem in AI-generated code"
         }
       ]
@@ -155,9 +155,9 @@
       "category_id": "testing",
       "name": "Testing & Stability",
       "weight": 0.25,
-      "score": 10.5,
+      "score": 18.5,
       "max_score": 25.0,
-      "percentage": 42.0,
+      "percentage": 74.0,
       "checks": [
         {
           "check_id": "test_suite_exists",
@@ -192,21 +192,21 @@
         {
           "check_id": "mutation_testing",
           "name": "Mutation Testing",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 4.0,
-          "evidence": "No mutation testing found",
-          "remediation": "Add cargo-mutants (Rust), Stryker (JS/TS), mutmut (Python), or PIT (Java). Mutation testing catches tests that pass without verifying behavior.",
+          "evidence": "Mutation testing config found (mutmut_config.py)",
+          "remediation": "Add mutation testing to CI, even on a scheduled basis.",
           "source": "SlopCodeBench - code that 'appears correct but is unreliable'"
         },
         {
           "check_id": "property_based_testing",
           "name": "Property-Based Testing",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No property-based testing found",
-          "remediation": "Add proptest (Rust), hypothesis (Python), or fast-check (JS/TS) for testing invariants with random structured inputs.",
+          "evidence": "Property-based testing library found in pyproject.toml",
+          "remediation": "",
           "source": "Blog: catching edge cases in AI-generated code"
         },
         {
@@ -222,11 +222,11 @@
         {
           "check_id": "contract_tests",
           "name": "Contract / Compatibility Tests",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No contract or compatibility tests found",
-          "remediation": "Add contract tests that verify external interface stability (golden fixtures, snapshot tests, wire-format checks).",
+          "evidence": "Contract/compatibility tests found: tests/fixtures/golden_json_output.json, tests/fixtures/golden_json_output.json",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - mechanical constraints"
         },
         {
@@ -245,68 +245,68 @@
       "category_id": "review",
       "name": "Review & Drift Prevention",
       "weight": 0.15,
-      "score": 0.0,
+      "score": 15.0,
       "max_score": 15.0,
-      "percentage": 0.0,
+      "percentage": 100.0,
       "checks": [
         {
           "check_id": "code_review_required",
           "name": "Code Review Required",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 4.0,
           "max_points": 4.0,
-          "evidence": "Cannot verify branch protection without API access. Run with --github-token or --gitlab-token for full assessment.",
-          "remediation": "Enable required reviews in branch protection settings and add CODEOWNERS.",
+          "evidence": "CODEOWNERS file found: CODEOWNERS",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - author/reviewer separation"
         },
         {
           "check_id": "scheduled_ci",
           "name": "Scheduled CI Jobs",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No scheduled CI jobs found",
-          "remediation": "Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.",
+          "evidence": "Scheduled CI pipeline found",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - garbage collection agents"
         },
         {
           "check_id": "stale_doc_detection",
           "name": "Stale Documentation Detection",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No stale documentation detection found",
-          "remediation": "Add TODO/FIXME scanning, link checking (lychee), or prose linting (vale) to CI.",
+          "evidence": "Documentation quality check in CI: link.check|markdown.link|lychee|linkinator",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - quality drift"
         },
         {
           "check_id": "mr_template",
           "name": "PR/MR Template",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No PR/MR template found",
-          "remediation": "Add .github/PULL_REQUEST_TEMPLATE.md or .gitlab/merge_request_templates/Default.md with sections for description, testing, and impact.",
+          "evidence": "PR/MR template found: .github/PULL_REQUEST_TEMPLATE.md",
+          "remediation": "",
           "source": "DORA 2025 - working in small batches"
         },
         {
           "check_id": "automated_review",
           "name": "Automated Code Review",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No automated review tools found",
-          "remediation": "Configure CodeRabbit, SonarCloud, Dependabot/Renovate, or equivalent for automated review on every PR/MR.",
+          "evidence": "Automated review tool configured: .github/dependabot.yml",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - separate authoring and reviewing agents"
         },
         {
           "check_id": "doc_sync_check",
           "name": "Documentation Sync Check",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No documentation sync checks found in CI",
-          "remediation": "Add CI jobs that verify related docs stay in sync (e.g. diff AGENTS.md CLAUDE.md, golden fixture checks).",
+          "evidence": "Documentation sync job found in CI",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - curated knowledge base"
         }
       ]
@@ -315,58 +315,58 @@
       "category_id": "ai_safeguards",
       "name": "AI-Specific Safeguards",
       "weight": 0.15,
-      "score": 0.0,
+      "score": 13.5,
       "max_score": 15.0,
-      "percentage": 0.0,
+      "percentage": 90.0,
       "checks": [
         {
           "check_id": "ai_usage_norms",
           "name": "AI Usage Norms",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 4.0,
           "max_points": 4.0,
-          "evidence": "No AI usage norms documented",
-          "remediation": "Document AI usage policies: review expectations for AI-generated code, when manual implementation is required, testing-before-implementation norms.",
+          "evidence": "AI usage norms found in CONTRIBUTING.md",
+          "remediation": "",
           "source": "DORA 2025 - clear organizational stance on AI use"
         },
         {
           "check_id": "small_batch_enforcement",
           "name": "Small Batch Enforcement",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No small batch enforcement found",
-          "remediation": "Add PR size checks (Danger, pr-size-labeler) or document size guidelines in CONTRIBUTING.md. Large AI-generated PRs are harder to review.",
+          "evidence": "Small batch guidelines found in CONTRIBUTING.md",
+          "remediation": "",
           "source": "DORA 2025 - working in small batches"
         },
         {
           "check_id": "multiple_approach_culture",
           "name": "Design-Before-Code Culture",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No design-before-code process found",
-          "remediation": "Create docs/rfcs/ or docs/designs/ directory. Document a process where significant changes start with a design doc or plan before implementation.",
+          "evidence": "RFC/design document directory found: docs/designs",
+          "remediation": "",
           "source": "Blog: cognitive offloading guardrails"
         },
         {
           "check_id": "error_handling_policy",
           "name": "Error Handling Policy",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 1.5,
           "max_points": 3.0,
-          "evidence": "No error handling policy found",
-          "remediation": "Add clippy lints (unwrap_used, expect_used) for Rust, ESLint rules for JS/TS, or document error handling patterns in agent instructions.",
+          "evidence": "Error handling guidelines found in AGENTS.md",
+          "remediation": "Enforce error handling rules mechanically via lints, not just documentation.",
           "source": "Blog: AI agents deleting tests, using expect()"
         },
         {
           "check_id": "security_critical_marking",
           "name": "Security-Critical Path Marking",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No security-critical path marking found",
-          "remediation": "Add CODEOWNERS for sensitive directories, SECURITY.md for vuln reporting, or SAST scanning in CI.",
+          "evidence": "CODEOWNERS found: CODEOWNERS",
+          "remediation": "",
           "source": "Blog: 80% problem in security infrastructure"
         }
       ]

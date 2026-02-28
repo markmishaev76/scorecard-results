@@ -1,20 +1,20 @@
 # AI Harness Scorecard: awesome-llm-security
 
-**Grade: F** (0.0/100) | No meaningful harness. AI output is essentially unaudited.
+**Grade: F** (6.4/100) | No meaningful harness. AI output is essentially unaudited.
 
 - **Repository**: `/tmp/awesome-llm-security`
 - **Languages**: none detected
-- **Assessed**: 2026-02-28 10:19 UTC
-- **Checks**: 0/31 passed
+- **Assessed**: 2026-02-28 11:50 UTC
+- **Checks**: 2/31 passed
 
 ## Summary
 
 | Category | Weight | Score | Checks |
 |----------|--------|-------|--------|
 | Architectural Documentation | 20% | 0% [----------] | 0/5 |
-| Mechanical Constraints | 25% | 0% [----------] | 0/7 |
+| Mechanical Constraints | 25% | 14% [#---------] | 1/7 |
 | Testing & Stability | 25% | 0% [----------] | 0/8 |
-| Review & Drift Prevention | 15% | 0% [----------] | 0/6 |
+| Review & Drift Prevention | 15% | 20% [##--------] | 1/6 |
 | AI-Specific Safeguards | 15% | 0% [----------] | 0/5 |
 
 ## Architectural Documentation (0%)
@@ -60,15 +60,13 @@ _DORA 2025 - AI-accessible documentation_
 **Remediation**: Add doc generation to CI (cargo doc, typedoc, sphinx) or maintain OpenAPI/Swagger specs.
 
 
-## Mechanical Constraints (0%)
+## Mechanical Constraints (14%)
 
-### [FAIL] CI Pipeline (0/3)
+### [PASS] CI Pipeline (3/3)
 
 _DORA 2025 Report_
 
-**Evidence**: No CI configuration found
-
-**Remediation**: Add .gitlab-ci.yml or .github/workflows/ to run automated checks on every change.
+**Evidence**: CI detected: github
 
 ### [FAIL] Linter Enforcement (0/4)
 
@@ -186,7 +184,7 @@ _DORA 2025 - stability metrics_
 **Remediation**: Add test execution to CI as a blocking job.
 
 
-## Review & Drift Prevention (0%)
+## Review & Drift Prevention (20%)
 
 ### [FAIL] Code Review Required (0/4)
 
@@ -196,13 +194,11 @@ _OpenAI Harness Engineering - author/reviewer separation_
 
 **Remediation**: Enable required reviews in branch protection settings and add CODEOWNERS.
 
-### [FAIL] Scheduled CI Jobs (0/3)
+### [PASS] Scheduled CI Jobs (3/3)
 
 _OpenAI Harness Engineering - garbage collection agents_
 
-**Evidence**: No scheduled CI jobs found
-
-**Remediation**: Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.
+**Evidence**: Scheduled CI pipeline found
 
 ### [FAIL] Stale Documentation Detection (0/2)
 

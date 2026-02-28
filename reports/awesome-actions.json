@@ -1,13 +1,13 @@
 {
   "repo_path": "/tmp/awesome-actions",
   "repo_name": "awesome-actions",
-  "timestamp": "2026-02-28T10:19:57.385886+00:00",
+  "timestamp": "2026-02-28T11:50:42.622165+00:00",
   "languages": [],
-  "overall_score": 3.4,
+  "overall_score": 6.4,
   "grade": "F",
   "grade_description": "No meaningful harness. AI output is essentially unaudited.",
   "total_checks": 31,
-  "passed_checks": 1,
+  "passed_checks": 2,
   "categories": [
     {
       "category_id": "documentation",
@@ -83,7 +83,7 @@
           "passed": true,
           "score": 3.0,
           "max_points": 3.0,
-          "evidence": "CI detected: github",
+          "evidence": "CI detected: github, github",
           "remediation": "",
           "source": "DORA 2025 Report"
         },
@@ -243,9 +243,9 @@
       "category_id": "review",
       "name": "Review & Drift Prevention",
       "weight": 0.15,
-      "score": 0.0,
+      "score": 3.0,
       "max_score": 15.0,
-      "percentage": 0.0,
+      "percentage": 20.0,
       "checks": [
         {
           "check_id": "code_review_required",
@@ -260,11 +260,11 @@
         {
           "check_id": "scheduled_ci",
           "name": "Scheduled CI Jobs",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "No scheduled CI jobs found",
-          "remediation": "Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.",
+          "evidence": "Scheduled CI pipeline found",
+          "remediation": "",
           "source": "OpenAI Harness Engineering - garbage collection agents"
         },
         {
