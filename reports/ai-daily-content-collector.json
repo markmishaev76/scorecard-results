@@ -1,0 +1,375 @@
+{
+  "repo_path": "/tmp/ai-daily-content-collector",
+  "repo_name": "ai-daily-content-collector",
+  "timestamp": "2026-02-28T10:13:07.669875+00:00",
+  "languages": [
+    "python"
+  ],
+  "overall_score": 1.5,
+  "grade": "F",
+  "grade_description": "No meaningful harness. AI output is essentially unaudited.",
+  "total_checks": 31,
+  "passed_checks": 1,
+  "categories": [
+    {
+      "category_id": "documentation",
+      "name": "Architectural Documentation",
+      "weight": 0.2,
+      "score": 0.0,
+      "max_score": 20.0,
+      "percentage": 0.0,
+      "checks": [
+        {
+          "check_id": "architecture_doc",
+          "name": "Architecture Documentation",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 5.0,
+          "evidence": "No architecture documentation found",
+          "remediation": "Create ARCHITECTURE.md at repo root following matklad's pattern: short, stable, focused on module boundaries and constraints.",
+          "source": "matklad ARCHITECTURE.md guide"
+        },
+        {
+          "check_id": "agent_instructions",
+          "name": "Agent Instructions",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 5.0,
+          "evidence": "No AI agent instruction files found",
+          "remediation": "Create CLAUDE.md or AGENTS.md with project context, code style, and constraints so AI agents produce consistent output.",
+          "source": "OpenAI Harness Engineering (2026)"
+        },
+        {
+          "check_id": "adr_presence",
+          "name": "Architecture Decision Records",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No Architecture Decision Records found",
+          "remediation": "Create docs/adr/ directory with numbered markdown decision records. Use adr-tools or a simple template.",
+          "source": "DORA 2025 Report - AI-accessible documentation"
+        },
+        {
+          "check_id": "module_boundary_docs",
+          "name": "Module Boundary Documentation",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No module boundary constraints documented",
+          "remediation": "Document which modules must NOT depend on each other in ARCHITECTURE.md. Example: 'The fields crate never depends on any other workspace crate.'",
+          "source": "matklad ARCHITECTURE.md - constraints as absences"
+        },
+        {
+          "check_id": "api_contracts",
+          "name": "API Documentation",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No API documentation generation or spec files found",
+          "remediation": "Add doc generation to CI (cargo doc, typedoc, sphinx) or maintain OpenAPI/Swagger specs.",
+          "source": "DORA 2025 - AI-accessible documentation"
+        }
+      ]
+    },
+    {
+      "category_id": "constraints",
+      "name": "Mechanical Constraints",
+      "weight": 0.25,
+      "score": 0.0,
+      "max_score": 22.0,
+      "percentage": 0.0,
+      "checks": [
+        {
+          "check_id": "ci_pipeline_exists",
+          "name": "CI Pipeline",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No CI configuration found",
+          "remediation": "Add .gitlab-ci.yml or .github/workflows/ to run automated checks on every change.",
+          "source": "DORA 2025 Report"
+        },
+        {
+          "check_id": "linter_enforcement",
+          "name": "Linter Enforcement",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No linter found in CI",
+          "remediation": "Add a linter to CI that blocks merges on violations (e.g. cargo clippy -- -D warnings, eslint --max-warnings 0).",
+          "source": "OpenAI Harness Engineering - mechanical constraints"
+        },
+        {
+          "check_id": "formatter_enforcement",
+          "name": "Formatter Enforcement",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No formatter check found in CI",
+          "remediation": "Add a formatter check to CI (e.g. cargo fmt --all -- --check, prettier --check).",
+          "source": "OpenAI Harness Engineering - mechanical constraints"
+        },
+        {
+          "check_id": "type_safety",
+          "name": "Type Safety",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No type safety enforcement found",
+          "remediation": "Use a statically typed language, enable TypeScript strict mode, or add mypy/pyright to CI for Python.",
+          "source": "SlopCodeBench - preventing subtle type errors"
+        },
+        {
+          "check_id": "dependency_auditing",
+          "name": "Dependency Auditing",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No dependency auditing found",
+          "remediation": "Add cargo deny/audit, npm audit, pip-audit, or Snyk to CI as a blocking check.",
+          "source": "Blog: security infrastructure reliability"
+        },
+        {
+          "check_id": "conventional_commits",
+          "name": "Conventional Commits",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No conventional commit enforcement found",
+          "remediation": "Add commitlint or equivalent to CI to enforce consistent commit message format.",
+          "source": "DORA 2025 - working in small batches"
+        },
+        {
+          "check_id": "unsafe_code_policy",
+          "name": "Unsafe Code Policy",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No explicit policy against unsafe code patterns",
+          "remediation": "Add unsafe_code = forbid (Rust), security linting (semgrep/bandit), or ESLint rules against dangerous patterns.",
+          "source": "Blog: 80% problem in AI-generated code"
+        }
+      ]
+    },
+    {
+      "category_id": "testing",
+      "name": "Testing & Stability",
+      "weight": 0.25,
+      "score": 1.5,
+      "max_score": 25.0,
+      "percentage": 6.0,
+      "checks": [
+        {
+          "check_id": "test_suite_exists",
+          "name": "Test Suite",
+          "passed": true,
+          "score": 1.5,
+          "max_points": 3.0,
+          "evidence": "Tests found but not confirmed in CI",
+          "remediation": "Add test execution to your CI pipeline.",
+          "source": "Kent Beck - tests define what correct means"
+        },
+        {
+          "check_id": "feature_matrix_testing",
+          "name": "Feature Matrix Testing",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "Only one test configuration found",
+          "remediation": "Add CI jobs for different feature flags, environments, or dependency versions (e.g. --all-features, --no-default-features, MSRV check).",
+          "source": "DORA 2025 - stability through comprehensive testing"
+        },
+        {
+          "check_id": "coverage_measurement",
+          "name": "Code Coverage",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No code coverage measurement found",
+          "remediation": "Add cargo llvm-cov, pytest-cov, istanbul/c8, or equivalent to CI. Even informational coverage provides a feedback loop.",
+          "source": "DORA 2025 - stability feedback loops"
+        },
+        {
+          "check_id": "mutation_testing",
+          "name": "Mutation Testing",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No mutation testing found",
+          "remediation": "Add cargo-mutants (Rust), Stryker (JS/TS), mutmut (Python), or PIT (Java). Mutation testing catches tests that pass without verifying behavior.",
+          "source": "SlopCodeBench - code that 'appears correct but is unreliable'"
+        },
+        {
+          "check_id": "property_based_testing",
+          "name": "Property-Based Testing",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No property-based testing found",
+          "remediation": "Add proptest (Rust), hypothesis (Python), or fast-check (JS/TS) for testing invariants with random structured inputs.",
+          "source": "Blog: catching edge cases in AI-generated code"
+        },
+        {
+          "check_id": "fuzz_testing",
+          "name": "Fuzz Testing",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No fuzz testing found",
+          "remediation": "Add fuzz targets for parsing-heavy and input-handling code paths.",
+          "source": "Blog: 80% problem - catching what AI misses"
+        },
+        {
+          "check_id": "contract_tests",
+          "name": "Contract / Compatibility Tests",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No contract or compatibility tests found",
+          "remediation": "Add contract tests that verify external interface stability (golden fixtures, snapshot tests, wire-format checks).",
+          "source": "OpenAI Harness Engineering - mechanical constraints"
+        },
+        {
+          "check_id": "tests_blocking_ci",
+          "name": "Tests Block Merge",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No test jobs found in CI",
+          "remediation": "Add test execution to CI as a blocking job.",
+          "source": "DORA 2025 - stability metrics"
+        }
+      ]
+    },
+    {
+      "category_id": "review",
+      "name": "Review & Drift Prevention",
+      "weight": 0.15,
+      "score": 0.0,
+      "max_score": 15.0,
+      "percentage": 0.0,
+      "checks": [
+        {
+          "check_id": "code_review_required",
+          "name": "Code Review Required",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "Cannot verify branch protection without API access. Run with --github-token or --gitlab-token for full assessment.",
+          "remediation": "Enable required reviews in branch protection settings and add CODEOWNERS.",
+          "source": "OpenAI Harness Engineering - author/reviewer separation"
+        },
+        {
+          "check_id": "scheduled_ci",
+          "name": "Scheduled CI Jobs",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No scheduled CI jobs found",
+          "remediation": "Add scheduled/nightly CI pipelines for drift detection: stricter lints, dependency freshness, doc coverage scans.",
+          "source": "OpenAI Harness Engineering - garbage collection agents"
+        },
+        {
+          "check_id": "stale_doc_detection",
+          "name": "Stale Documentation Detection",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No stale documentation detection found",
+          "remediation": "Add TODO/FIXME scanning, link checking (lychee), or prose linting (vale) to CI.",
+          "source": "OpenAI Harness Engineering - quality drift"
+        },
+        {
+          "check_id": "mr_template",
+          "name": "PR/MR Template",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No PR/MR template found",
+          "remediation": "Add .github/PULL_REQUEST_TEMPLATE.md or .gitlab/merge_request_templates/Default.md with sections for description, testing, and impact.",
+          "source": "DORA 2025 - working in small batches"
+        },
+        {
+          "check_id": "automated_review",
+          "name": "Automated Code Review",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No automated review tools found",
+          "remediation": "Configure CodeRabbit, SonarCloud, Dependabot/Renovate, or equivalent for automated review on every PR/MR.",
+          "source": "OpenAI Harness Engineering - separate authoring and reviewing agents"
+        },
+        {
+          "check_id": "doc_sync_check",
+          "name": "Documentation Sync Check",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No documentation sync checks found in CI",
+          "remediation": "Add CI jobs that verify related docs stay in sync (e.g. diff AGENTS.md CLAUDE.md, golden fixture checks).",
+          "source": "OpenAI Harness Engineering - curated knowledge base"
+        }
+      ]
+    },
+    {
+      "category_id": "ai_safeguards",
+      "name": "AI-Specific Safeguards",
+      "weight": 0.15,
+      "score": 0.0,
+      "max_score": 15.0,
+      "percentage": 0.0,
+      "checks": [
+        {
+          "check_id": "ai_usage_norms",
+          "name": "AI Usage Norms",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 4.0,
+          "evidence": "No AI usage norms documented",
+          "remediation": "Document AI usage policies: review expectations for AI-generated code, when manual implementation is required, testing-before-implementation norms.",
+          "source": "DORA 2025 - clear organizational stance on AI use"
+        },
+        {
+          "check_id": "small_batch_enforcement",
+          "name": "Small Batch Enforcement",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No small batch enforcement found",
+          "remediation": "Add PR size checks (Danger, pr-size-labeler) or document size guidelines in CONTRIBUTING.md. Large AI-generated PRs are harder to review.",
+          "source": "DORA 2025 - working in small batches"
+        },
+        {
+          "check_id": "multiple_approach_culture",
+          "name": "Design-Before-Code Culture",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No design-before-code process found",
+          "remediation": "Create docs/rfcs/ or docs/designs/ directory. Document a process where significant changes start with a design doc or plan before implementation.",
+          "source": "Blog: cognitive offloading guardrails"
+        },
+        {
+          "check_id": "error_handling_policy",
+          "name": "Error Handling Policy",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 3.0,
+          "evidence": "No error handling policy found",
+          "remediation": "Add clippy lints (unwrap_used, expect_used) for Rust, ESLint rules for JS/TS, or document error handling patterns in agent instructions.",
+          "source": "Blog: AI agents deleting tests, using expect()"
+        },
+        {
+          "check_id": "security_critical_marking",
+          "name": "Security-Critical Path Marking",
+          "passed": false,
+          "score": 0.0,
+          "max_points": 2.0,
+          "evidence": "No security-critical path marking found",
+          "remediation": "Add CODEOWNERS for sensitive directories, SECURITY.md for vuln reporting, or SAST scanning in CI.",
+          "source": "Blog: 80% problem in security infrastructure"
+        }
+      ]
+    }
+  ]
+}
