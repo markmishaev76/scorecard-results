@@ -1,7 +1,7 @@
 {
   "repo_path": "/tmp/ai-daily-content-collector",
   "repo_name": "ai-daily-content-collector",
-  "timestamp": "2026-03-10T06:32:24.161802+00:00",
+  "timestamp": "2026-03-11T06:35:20.971413+00:00",
   "languages": [
     "python"
   ],
@@ -206,7 +206,7 @@
           "score": 0.0,
           "max_points": 3.0,
           "evidence": "No property-based testing found",
-          "remediation": "Add proptest (Rust), hypothesis (Python), or fast-check (JS/TS) for testing invariants with random structured inputs.",
+          "remediation": "Add proptest (Rust), hypothesis (Python), fast-check (JS/TS), or jqwik (Java) for testing invariants with random structured inputs.",
           "source": "Blog: catching edge cases in AI-generated code"
         },
         {

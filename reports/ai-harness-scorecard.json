@@ -1,7 +1,7 @@
 {
   "repo_path": "/tmp/ai-harness-scorecard",
   "repo_name": "ai-harness-scorecard",
-  "timestamp": "2026-03-10T06:32:24.595235+00:00",
+  "timestamp": "2026-03-11T06:35:16.184469+00:00",
   "languages": [
     "python"
   ],
@@ -335,7 +335,7 @@
           "passed": true,
           "score": 3.0,
           "max_points": 3.0,
-          "evidence": "Small batch guidelines found in CONTRIBUTING.md",
+          "evidence": "PR size check tool found in CI",
           "remediation": "",
           "source": "DORA 2025 - working in small batches"
         },

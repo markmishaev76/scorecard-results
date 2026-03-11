@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/awesome-llm-security`
 - **Languages**: none detected
-- **Assessed**: 2026-03-10 06:32 UTC
+- **Assessed**: 2026-03-11 06:35 UTC
 - **Checks**: 2/31 passed
 
 ## Summary
@@ -157,7 +157,7 @@ _Blog: catching edge cases in AI-generated code_
 
 **Evidence**: No property-based testing found
 
-**Remediation**: Add proptest (Rust), hypothesis (Python), or fast-check (JS/TS) for testing invariants with random structured inputs.
+**Remediation**: Add proptest (Rust), hypothesis (Python), fast-check (JS/TS), or jqwik (Java) for testing invariants with random structured inputs.
 
 ### [FAIL] Fuzz Testing (0/3)
 

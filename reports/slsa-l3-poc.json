@@ -1,7 +1,7 @@
 {
   "repo_path": "/tmp/slsa-l3-poc",
   "repo_name": "slsa-l3-poc",
-  "timestamp": "2026-03-10T06:32:21.338792+00:00",
+  "timestamp": "2026-03-11T06:35:18.238151+00:00",
   "languages": [],
   "overall_score": 13.4,
   "grade": "F",
@@ -173,7 +173,7 @@
           "passed": true,
           "score": 3.0,
           "max_points": 3.0,
-          "evidence": "Multiple test jobs in CI: build-and-attest, create-deployment-record, verify",
+          "evidence": "Multiple test jobs in CI: build-and-attest, create-deployment-record, build-binary, verify, build",
           "remediation": "",
           "source": "DORA 2025 - stability through comprehensive testing"
         },
@@ -204,7 +204,7 @@
           "score": 0.0,
           "max_points": 3.0,
           "evidence": "No property-based testing found",
-          "remediation": "Add proptest (Rust), hypothesis (Python), or fast-check (JS/TS) for testing invariants with random structured inputs.",
+          "remediation": "Add proptest (Rust), hypothesis (Python), fast-check (JS/TS), or jqwik (Java) for testing invariants with random structured inputs.",
           "source": "Blog: catching edge cases in AI-generated code"
         },
         {
@@ -233,7 +233,7 @@
           "passed": true,
           "score": 2.0,
           "max_points": 2.0,
-          "evidence": "All test jobs are blocking: build-and-attest, create-deployment-record, create-storage-record",
+          "evidence": "All test jobs are blocking: build-and-attest, create-deployment-record, build-binary",
           "remediation": "",
           "source": "DORA 2025 - stability metrics"
         }
