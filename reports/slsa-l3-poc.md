@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/slsa-l3-poc`
 - **Languages**: none detected
-- **Assessed**: 2026-08-26 06:22 UTC
+- **Assessed**: 2026-08-27 16:52 UTC
 - **Checks**: 5/31 passed
 
 ## Summary
