@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/awesome-llm-security`
 - **Languages**: none detected
-- **Assessed**: 2026-09-25 10:36 UTC
+- **Assessed**: 2026-09-26 10:20 UTC
 - **Checks**: 2/31 passed
 
 ## Summary
