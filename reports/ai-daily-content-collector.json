@@ -1,15 +1,15 @@
 {
   "repo_path": "/tmp/ai-daily-content-collector",
   "repo_name": "ai-daily-content-collector",
-  "timestamp": "2026-10-22T10:41:59.419089+00:00",
+  "timestamp": "2026-10-23T10:34:09.069576+00:00",
   "languages": [
     "python"
   ],
-  "overall_score": 7.9,
+  "overall_score": 11.4,
   "grade": "F",
   "grade_description": "No meaningful harness. AI output is essentially unaudited.",
   "total_checks": 31,
-  "passed_checks": 3,
+  "passed_checks": 4,
   "categories": [
     {
       "category_id": "documentation",
@@ -85,7 +85,7 @@
           "passed": true,
           "score": 3.0,
           "max_points": 3.0,
-          "evidence": "CI detected: github",
+          "evidence": "CI detected: github, github",
           "remediation": "",
           "source": "DORA 2025 Report"
         },
@@ -155,18 +155,18 @@
       "category_id": "testing",
       "name": "Testing & Stability",
       "weight": 0.25,
-      "score": 1.5,
+      "score": 5.0,
       "max_score": 25.0,
-      "percentage": 6.0,
+      "percentage": 20.0,
       "checks": [
         {
           "check_id": "test_suite_exists",
           "name": "Test Suite",
           "passed": true,
-          "score": 1.5,
+          "score": 3.0,
           "max_points": 3.0,
-          "evidence": "Tests found but not confirmed in CI",
-          "remediation": "Add test execution to your CI pipeline.",
+          "evidence": "Tests present and executed in CI",
+          "remediation": "",
           "source": "Kent Beck - tests define what correct means"
         },
         {
@@ -232,11 +232,11 @@
         {
           "check_id": "tests_blocking_ci",
           "name": "Tests Block Merge",
-          "passed": false,
-          "score": 0.0,
+          "passed": true,
+          "score": 2.0,
           "max_points": 2.0,
-          "evidence": "No test jobs found in CI",
-          "remediation": "Add test execution to CI as a blocking job.",
+          "evidence": "All test jobs are blocking: build",
+          "remediation": "",
           "source": "DORA 2025 - stability metrics"
         }
       ]
