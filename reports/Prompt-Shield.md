@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/Prompt-Shield`
 - **Languages**: python
-- **Assessed**: 2026-11-19 14:44 UTC
+- **Assessed**: 2026-11-20 14:25 UTC
 - **Checks**: 13/31 passed
 
 ## Summary
