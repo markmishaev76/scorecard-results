@@ -4,7 +4,7 @@
 
 - **Repository**: `/tmp/ai-harness-scorecard`
 - **Languages**: python
-- **Assessed**: 2026-11-25 16:11 UTC
+- **Assessed**: 2026-11-26 15:51 UTC
 - **Checks**: 30/31 passed
 
 ## Summary
